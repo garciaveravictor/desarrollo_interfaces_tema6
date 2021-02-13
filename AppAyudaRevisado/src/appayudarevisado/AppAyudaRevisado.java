@@ -1,4 +1,9 @@
-package appayuda;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package appayudarevisado;
 
 import javafx.application.Application;
 import static javafx.application.Application.launch;
@@ -33,16 +38,20 @@ import javafx.scene.web.WebView;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 import netscape.javascript.JSObject;
-
-public class AppAyuda extends Application {
+/**
+ *
+ * @author Victor Garcia Vera 2DAM
+ */
+public class AppAyudaRevisado extends Application {
 
     private Scene scene;
 
     @Override
     public void start(Stage stage) {
-        stage.setTitle("Ies Los montecillos");
+        stage.setTitle("Web View");
         scene = new Scene(new Browser(), 750, 500, Color.web("#666970"));
         stage.setScene(scene);
+        //scene.getStylesheets().add(App.class.getResource("BrowserToolbar.css").toExternalForm()); 
         stage.show();
     }
 
@@ -52,29 +61,34 @@ public class AppAyuda extends Application {
 }
 
 class Browser extends Region {
-
     private HBox toolBar;
     private static String[] imageFiles = new String[]{
-        "/resources/moodle.png",
-        "/resources/facebook.png",
-        "/resources/linkedin.png",
-        "/resources/instagram.png"
+        "/resources/product.png",
+        "/resources/blog.png",
+        "/resources/documentation.png",
+        "/resources/partners.png",
+        "/resources/help.png"
     };
     private static String[] captions = new String[]{
-        "Moodle",
-        "Facebook",
-        "Linkedin",
-        "Instagram"
+        "Products",
+        "Blogs",
+        "Documentation",
+        "Partners",
+        "Help"
     };
     private static String[] urls = new String[]{
-        "http://www.ieslosmontecillos.es/moodle",
-        "https://www.facebook.com/Oracle/",
-        "https://es.linkedin.com/",
-        "https://www.instagram.com/oracle/?hl=es"
+        "http://www.oracle.com/products/index.html",
+        "http://blogs.oracle.com/",
+        "http://docs.oracle.com/javase/index.html",
+       // "http://www.oracle.com/partners/index.html "
+        //WebViewSample.class.getResource("help.html").toExternalForm()
+      
     };
+    
     final ImageView selectedImage = new ImageView();
     final Hyperlink[] hpls = new Hyperlink[captions.length];
     final Image[] images = new Image[imageFiles.length];
+
     final WebView browser = new WebView();
     final WebEngine webEngine = browser.getEngine();
     final Button showPrevDoc = new Button("Toggle Previous Docs");
@@ -154,7 +168,8 @@ class Browser extends Region {
         );
 
         // load the home page        
-        webEngine.load("http://www.ieslosmontecillos.es/wp/");
+        webEngine.load("http://www.oracle.com/products/index.html ");
+
         final ComboBox comboBox = new ComboBox();
         comboBox.setPrefWidth(60);
         toolBar.getChildren().add(comboBox);
