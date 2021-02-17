@@ -51,7 +51,7 @@ public class AppAyudaRevisado extends Application {
         stage.setTitle("Web View");
         scene = new Scene(new Browser(), 750, 500, Color.web("#666970"));
         stage.setScene(scene);
-        //scene.getStylesheets().add(App.class.getResource("BrowserToolbar.css").toExternalForm()); 
+        scene.getStylesheets().add(App.class.getResource("BrowserToolbar.css").toExternalForm()); 
         stage.show();
     }
 
@@ -80,8 +80,8 @@ class Browser extends Region {
         "http://www.oracle.com/products/index.html",
         "http://blogs.oracle.com/",
         "http://docs.oracle.com/javase/index.html",
-       // "http://www.oracle.com/partners/index.html "
-        //WebViewSample.class.getResource("help.html").toExternalForm()
+        "http://www.oracle.com/partners/index.html ",
+        WebViewSample.class.getResource("help.html").toExternalForm()
       
     };
     
