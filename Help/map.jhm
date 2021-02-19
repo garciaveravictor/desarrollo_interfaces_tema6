@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='ISO−8859−1'?>
+<!DOCTYPE html>
+<map version="2.0">
+    <mapID target="toplevelfolder" url="images/toplevel.gif">
+        <mapID target="intro" url="fuentes/Ayuda_intro.html" />
+    </mapID>
+</map>
